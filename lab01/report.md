@@ -12,6 +12,8 @@ Set up a reproducible environment, train two baseline models on the Breast Cance
 
 \- Python 3.11.9 in a venv with pinned requirements (versions in `results/versions.txt`). Note: the manual asks for 3.11.8; I used 3.11.9, the same minor version. `pyarrow` is pinned to 15.0.2 because `mlflow==2.14.1` requires `pyarrow<16`, which conflicts with the 16.1.0 in the manual.
 
+\- Because two models were measured, they are saved as `results/model\_LogisticRegression.joblib` and `results/model\_RandomForest.joblib` instead of a single `results/model.joblib`.
+
 \- Data: `load\_breast\_cancer`, 70/30 stratified split, `random\_state=42`. Seeds set to 42.
 
 \- Models: LogisticRegression (max\_iter=1000) and RandomForest (100 trees).
@@ -19,8 +21,6 @@ Set up a reproducible environment, train two baseline models on the Breast Cance
 \- Training time: median of 5 runs after 1 warm-up. Inference: median of 100 single-sample predictions after a warm-up. Model size: `joblib.dump` file size. Peak memory: `memory\_profiler` during training and during 100 inferences.
 
 \- Code is in `src/`, raw numbers in `results/`.
-
-
 
 \## 3. Results
 
