@@ -74,9 +74,9 @@ Caveat: latency was measured on a desktop CPU, not on the target hardware, so Mo
 
 \## 4. Conclusions
 
-1\. (write in your own words)
+1\. The accuracy is almost the same (0.9415 / 0.9357), but Random Forest is much larger (284 KB / 1 KB) and has slower inference (1.49 ms / 0.04 ms).
 
-2\. (write in your own words)
+2\. Memory usage is approximately 145 MiB for both because what is measured is the memory usage of the entire Python process, not just the model.
 
-3\. (write in your own words)
+3.Logistic Regression is closer to TinyML (1 KB, within the 100 KB limit), while Random Forest is far from it (284 KB).
 
